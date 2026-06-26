@@ -135,11 +135,8 @@ def sync_with_wiki(config, wiki_topics):
     return new_topics
 
 
-def topic_url(org, config, name):
-    if name.lower() in org_repos(config):
-        return f"https://github.com/{org}/{name}"
-    repo = content_repo(config)
-    return f"https://github.com/{org}/{repo}/tree/main/{name}"
+def topic_url(org, name):
+    return f"https://github.com/{org}/{name}"
 
 
 def group_has_repos(group):
@@ -153,7 +150,7 @@ def heading_anchor(name):
     return name
 
 
-def render_category(category, org, config):
+def render_category(category, org):
     repos = category["repos"] or []
     if not repos:
         return None
@@ -161,13 +158,13 @@ def render_category(category, org, config):
     if not category.get("flat"):
         lines.extend([f"### {category['name']}", ""])
     lines.extend([
-        "| Topic | Link | Memo |",
+        "| Repository | Repository URL | Memo |",
         "| --- | --- | --- |",
     ])
     for repo in repos:
         name = repo["name"]
         memo = repo.get("memo") or ""
-        url = topic_url(org, config, name)
+        url = topic_url(org, name)
         lines.append(f"| `{name}` | [GitHub]({url}) | {memo} |")
     return "\n".join(lines)
 
@@ -203,7 +200,7 @@ def render_tables(config, org):
         category_blocks = [
             block
             for category in group["categories"]
-            if (block := render_category(category, org, config)) is not None
+            if (block := render_category(category, org)) is not None
         ]
         if not category_blocks:
             continue
@@ -225,9 +222,9 @@ def dump_yaml(config):
     return stream.getvalue()
 
 
-def format_new_topics_for_pr(new_topics, org, config):
+def format_new_topics_for_pr(new_topics, org):
     return "\n".join(
-        f"- [`{name}`]({topic_url(org, config, name)})" for name in new_topics
+        f"- [`{name}`]({topic_url(org, name)})" for name in new_topics
     )
 
 
@@ -255,7 +252,7 @@ def write_github_output(changed, new_topics_added, new_topics, org, config, unca
         if new_topics:
             handle.write(f"pr_title_suffix={format_pr_title_suffix(new_topics)}\n")
             handle.write("new_repos_body<<EOF\n")
-            handle.write(format_new_topics_for_pr(new_topics, org, config))
+            handle.write(format_new_topics_for_pr(new_topics, org))
             handle.write("\nEOF\n")
 
 
