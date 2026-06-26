@@ -5,7 +5,7 @@ on:
     - cron: "0 0 * * *"
   push:
     paths:
-      - "profile/repos.yaml"
+      - "repos.yaml"
   workflow_dispatch:
 
 permissions:
@@ -25,9 +25,9 @@ jobs:
 
       - uses: astral-sh/setup-uv@v5
 
-      - name: Generate profile README
+      - name: Generate CATEGORY.md
         id: generate
-        working-directory: scripts
+        working-directory: .scripts
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
         run: |
@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/CATEGORY.md
+          git add CATEGORY.md
           git commit -m "chore: regenerate CATEGORY.md from repos.yaml"
           git push
 
@@ -48,41 +48,41 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.REPO_WRITE_TOKEN }}
-          branch: chore/sync-org-repos
+          branch: chore/sync-wiki-topics
           delete-branch: true
           title: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
           commit-message: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
           body: |
-            ## Org リポジトリの同期
+            ## wiki トピックの同期
 
-            GitHub API で検出した新しいリポジトリを `profile/repos.yaml` の `管理` → `未分類` に追加しました。
+            `wiki` にある新しいトピックを `repos.yaml` の `管理` → `未分類` に追加しました。
 
-            ### 追加されたリポジトリ
+            ### 追加されたトピック
 
             ${{ steps.generate.outputs.new_repos_body }}
 
             ### 対応してください
 
-            - [ ] 上記 repo を正しいカテゴリへ移動する
+            - [ ] 上記トピックを正しいカテゴリへ移動する
             - [ ] `memo` フィールドに説明を記入する
             - [ ] 未分類が空になると、この PR は自動マージされます
 
             ---
             _このPRは GitHub Actions により自動作成されました。_
           add-paths: |
-            profile/repos.yaml
-            profile/CATEGORY.md
+            repos.yaml
+            CATEGORY.md
 
       - name: Merge sync PR when 未分類 is empty
         if: steps.generate.outputs.uncategorized_empty == 'true'
         env:
           GH_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
         run: |
-          pr_number=$(gh pr list --head chore/sync-org-repos --state open --json number --jq '.[0].number // empty')
+          pr_number=$(gh pr list --head chore/sync-wiki-topics --state open --json number --jq '.[0].number // empty')
           if [ -z "$pr_number" ]; then
             echo "No open sync PR to merge"
             exit 0
           fi
           gh pr merge "$pr_number" --squash --delete-branch \
-            --subject "chore: sync org repos" \
+            --subject "chore: sync wiki topics" \
             --body "未分類が空になったため、この PR を自動マージしました。"

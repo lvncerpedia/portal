@@ -1,4 +1,8 @@
 org: lvncerpedia
+content_repo: wiki
+org_repos:
+  - portal
+  - wiki
 
 groups:
   - name: "理学"
@@ -154,4 +158,7 @@ groups:
     categories:
       - name: "Org"
         repos:
-          - {name: .github, memo: "Organizationプロフィール・同期スクリプト"}
+          - {name: portal, memo: "カテゴリ索引・プロフィール生成"}
+          - {name: wiki, memo: "知識ベース本体"}
+      - name: 未分類
+        repos: []
