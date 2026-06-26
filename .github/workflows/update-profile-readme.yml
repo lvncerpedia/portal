@@ -1,0 +1,88 @@
+name: Update profile README
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    paths:
+      - "profile/repos.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_WRITE_TOKEN }}
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Generate profile README
+        id: generate
+        working-directory: scripts
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
+        run: |
+          uv sync
+          uv run generate_profile_readme.py
+
+      - name: Commit CATEGORY.md to main
+        if: steps.generate.outputs.changed == 'true' && steps.generate.outputs.new_repos_added != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/CATEGORY.md
+          git commit -m "chore: regenerate CATEGORY.md from repos.yaml"
+          git push
+
+      - name: Create pull request
+        if: steps.generate.outputs.new_repos_added == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.REPO_WRITE_TOKEN }}
+          branch: chore/sync-org-repos
+          delete-branch: true
+          title: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
+          commit-message: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
+          body: |
+            ## Org リポジトリの同期
+
+            GitHub API で検出した新しいリポジトリを `profile/repos.yaml` の `管理` → `未分類` に追加しました。
+
+            ### 追加されたリポジトリ
+
+            ${{ steps.generate.outputs.new_repos_body }}
+
+            ### 対応してください
+
+            - [ ] 上記 repo を正しいカテゴリへ移動する
+            - [ ] `memo` フィールドに説明を記入する
+            - [ ] 未分類が空になると、この PR は自動マージされます
+
+            ---
+            _このPRは GitHub Actions により自動作成されました。_
+          add-paths: |
+            profile/repos.yaml
+            profile/CATEGORY.md
+
+      - name: Merge sync PR when 未分類 is empty
+        if: steps.generate.outputs.uncategorized_empty == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
+        run: |
+          pr_number=$(gh pr list --head chore/sync-org-repos --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr_number" ]; then
+            echo "No open sync PR to merge"
+            exit 0
+          fi
+          gh pr merge "$pr_number" --squash --delete-branch \
+            --subject "chore: sync org repos" \
+            --body "未分類が空になったため、この PR を自動マージしました。"

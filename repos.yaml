@@ -1,0 +1,157 @@
+org: lvncerpedia
+
+groups:
+  - name: "理学"
+    description: "数学・計算の原理。"
+    categories:
+      - flat: true
+        repos:
+          - {name: math, memo: "数学"}
+          - {name: algorithm-and-data-structure, memo: "アルゴリズム・データ構造"}
+
+  - name: "コンピュータ科学"
+    description: "計算機・OSの原理。"
+    categories:
+      - flat: true
+        repos:
+          - {name: computer-science, memo: "コンピュータサイエンス"}
+          - {name: os, memo: "オペレーティングシステム"}
+
+  - name: "ソフトウェア工学"
+    description: "システム開発（設計・実装・品質・運用）。"
+    categories:
+      - name: "設計"
+        repos:
+          - {name: architecture, memo: "ソフトウェアアーキテクチャ"}
+          - {name: api, memo: 'API'}
+          - {name: development-principles, memo: "開発原則"}
+          - {name: uml, memo: "UML"}
+          - {name: mermaid, memo: "Mermaid図"}
+      - name: "実装"
+        repos:
+          - {name: programming, memo: "プログラミング全般"}
+          - {name: programming-lang, memo: "プログラミング言語全般"}
+          - {name: javascript, memo: 'JavaScript'}
+          - {name: python, memo: 'Python'}
+          - {name: go, memo: "Go"}
+          - {name: rust, memo: "Rust"}
+          - {name: java, memo: "Java"}
+          - {name: react, memo: "React"}
+          - {name: react-native, memo: "React Native"}
+          - {name: nextjs, memo: "Next.js"}
+          - {name: rails, memo: "Rails"}
+          - {name: web-saas, memo: "Web/SaaS関連"}
+          - {name: js-libraries, memo: "JavaScriptライブラリ"}
+          - {name: tailwindcss, memo: "Tailwind CSS"}
+      - name: "品質"
+        repos:
+          - {name: usertest, memo: 'ユーザーテスト'}
+          - {name: software-test, memo: "ソフトウェアテスト"}
+          - {name: debug, memo: "デバッグ"}
+      - name: "運用"
+        repos:
+          - {name: aws, memo: "AWS"}
+          - {name: docker, memo: "Docker"}
+          - {name: kubernetes, memo: "Kubernetes関連"}
+          - {name: iac, memo: "Infrastructure as Code"}
+          - {name: network, memo: "ネットワーク"}
+          - {name: monitoring, memo: "監視"}
+          - {name: version-control, memo: "バージョン管理"}
+          - {name: git, memo: "Git"}
+          - {name: deploy, memo: "デプロイ"}
+          - {name: workflows, memo: "ワークフロー自動化"}
+
+  - name: "情報・知能"
+    description: "AI・データ。"
+    categories:
+      - name: "AI・LLM"
+        repos:
+          - {name: llm, memo: "LLMの基礎・仕組み"}
+          - {name: ml, memo: "機械学習"}
+          - {name: ai-agents, memo: "AIエージェント関連"}
+          - {name: local-llm, memo: "ローカルLLM"}
+          - {name: mcp, memo: "MCP・AIツール連携"}
+          - {name: claude-code, memo: "Claude Code"}
+          - {name: humanoid-robots, memo: "ヒューマノイドロボット"}
+          - {name: ai-positions, memo: "AI領域の人物・ポジション"}
+      - name: "データ"
+        repos:
+          - {name: database, memo: "データベース"}
+          - {name: sql, memo: "SQL"}
+          - {name: orm, memo: "ORM"}
+
+  - name: "デザイン"
+    description: "見た目・表現・メディア。"
+    categories:
+      - flat: true
+        repos:
+          - {name: design, memo: "デザイン"}
+          - {name: figma, memo: "Figma"}
+          - {name: fonts, memo: "フォント"}
+          - {name: sound, memo: "サウンド"}
+          - {name: audio, memo: "オーディオ機器・音響"}
+          - {name: presentation, memo: "プレゼンテーション"}
+          - {name: modeling, memo: "3D モデリング"}
+
+  - name: "人文・言語"
+    description: "言語を学ぶ。"
+    categories:
+      - flat: true
+        repos:
+          - {name: english, memo: "英語"}
+
+  - name: "教養・文化"
+    description: "知識・ゲーム・時事。"
+    categories:
+      - name: "文化・ゲーム"
+        repos:
+          - {name: game-making, memo: "ゲーム制作全般（技術面）"}
+          - {name: game-knowhow, memo: "ゲーム制作ノウハウ"}
+          - {name: godot, memo: "Godot"}
+          - {name: game-list, memo: "ゲーム一覧"}
+      - name: "知識・探究"
+        repos:
+          - {name: universe, memo: "宇宙"}
+          - {name: military, memo: "軍事・装備"}
+          - {name: exams, memo: "試験・学習メモ"}
+      - name: "時事・記録"
+        repos:
+          - {name: news, memo: "ニュースメモ"}
+          - {name: news-source, memo: "ニュース情報源"}
+          - {name: events, memo: "イベント"}
+
+  - name: "経営学"
+    description: "PM・組織・戦略。"
+    categories:
+      - flat: true
+        repos:
+          - {name: project-management, memo: "プロジェクト管理"}
+          - {name: corporate-strategy, memo: '経営戦略'}
+          - {name: logical-thinking, memo: "論理的思考"}
+          - {name: organizational-behavior, memo: "組織行動学"}
+
+  - name: "環境・ツール"
+    description: "開発環境・ガジェット。"
+    categories:
+      - name: "開発環境"
+        repos:
+          - {name: nvim, memo: "Neovim"}
+          - {name: obsidian, memo: "Obsidian"}
+          - {name: toolchain, memo: "開発ツールチェーン"}
+      - name: "ハードウェア"
+        repos:
+          - {name: gadget, memo: "ガジェット"}
+          - {name: custom-built-PC, memo: "自作PC"}
+          - {name: custom-keyboard, memo: "自作キーボード"}
+      - name: "デスク・操作"
+        repos:
+          - {name: unixporn, memo: "デスクトップカスタマイズ"}
+          - {name: setup, memo: "環境構築・セットアップ"}
+          - {name: shortcut, memo: "ショートカット"}
+
+  - name: "管理"
+    description: "Org 運用・未分類。"
+    categories:
+      - name: "Org"
+        repos:
+          - {name: .github, memo: "Organizationプロフィール・同期スクリプト"}
