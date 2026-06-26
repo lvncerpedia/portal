@@ -31,4 +31,4 @@ GitHub リポジトリ `portal` の Settings → Secrets に **`REPO_WRITE_TOKEN
 ## モノレポ前提
 
 - 知識本体: [`wiki`](https://github.com/lvncerpedia/wiki)
-- トピックリンク: `https://github.com/lvncerpedia/{topic}`
+- トピックリンク: `https://github.com/lvncerpedia/wiki/tree/main/{topic}`
