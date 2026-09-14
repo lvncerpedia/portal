@@ -1,30 +1,32 @@
 # portal
 
-lvncerpedia のカテゴリ索引と `CATEGORY.md` 自動生成。
+lvncerpedia のカテゴリ索引。
 
 ## 構成
 
 | ファイル | 役割 |
 | --- | --- |
 | `repos.yaml` | カテゴリ定義（人が編集） |
-| `CATEGORY.md` | 索引（自動生成） |
-| `.scripts/generate_profile_readme.py` | 生成スクリプト |
+| `CATEGORY.md` | 索引（人が編集） |
+| `.scripts/sync_wiki_topics.py` | `wiki` の新規トピックを `repos.yaml` の `未分類` に追加する同期スクリプト |
 
 ## ローカル
 
 ```bash
 cd portal/.scripts
 uv sync
-uv run generate_profile_readme.py
-uv run generate_profile_readme.py --check
+uv run sync_wiki_topics.py
+uv run sync_wiki_topics.py --check
 ```
+
+`wiki` リポジトリが `portal` と同階層（`../wiki`）にある前提でローカルのディレクトリ構造を読む。
 
 ## CI
 
-`.github/workflows/update-profile-readme.yml`
+`.github/workflows/sync-wiki-topics.yml`
 
-- `repos.yaml` 変更 or 定期実行で `CATEGORY.md` を再生成
-- `wiki` に新トピックがあれば `未分類` へ追加して PR 作成
+- 定期実行で `wiki` をチェックアウトし、新トピックがあれば `repos.yaml` の `未分類` へ追加して PR 作成
+- `CATEGORY.md` は自動生成されないため、カテゴリ変更時は手動で編集する
 
 GitHub リポジトリ `portal` の Settings → Secrets に **`REPO_WRITE_TOKEN`** が必要。
 

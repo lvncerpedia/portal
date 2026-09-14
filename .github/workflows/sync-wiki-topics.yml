@@ -1,11 +1,8 @@
-name: Update profile README
+name: Sync wiki topics
 
 on:
   schedule:
     - cron: "0 0 * * *"
-  push:
-    paths:
-      - "repos.yaml"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +13,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  update:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,31 +28,22 @@ jobs:
 
       - uses: astral-sh/setup-uv@v5
 
-      - name: Generate CATEGORY.md
-        id: generate
+      - name: Sync repos.yaml from wiki
+        id: sync
         working-directory: .scripts
         run: |
           uv sync
-          uv run generate_profile_readme.py
-
-      - name: Commit CATEGORY.md to main
-        if: steps.generate.outputs.changed == 'true' && steps.generate.outputs.new_repos_added != 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CATEGORY.md
-          git commit -m "chore: regenerate CATEGORY.md from repos.yaml"
-          git push
+          uv run sync_wiki_topics.py
 
       - name: Create pull request
-        if: steps.generate.outputs.new_repos_added == 'true'
+        if: steps.sync.outputs.new_repos_added == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.REPO_WRITE_TOKEN }}
           branch: chore/sync-wiki-topics
           delete-branch: true
-          title: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
-          commit-message: "chore: add ${{ steps.generate.outputs.pr_title_suffix }} to 未分類"
+          title: "chore: add ${{ steps.sync.outputs.pr_title_suffix }} to 未分類"
+          commit-message: "chore: add ${{ steps.sync.outputs.pr_title_suffix }} to 未分類"
           body: |
             ## wiki トピックの同期
 
@@ -63,7 +51,7 @@ jobs:
 
             ### 追加されたトピック
 
-            ${{ steps.generate.outputs.new_repos_body }}
+            ${{ steps.sync.outputs.new_repos_body }}
 
             ### 対応してください
 
@@ -75,10 +63,9 @@ jobs:
             _このPRは GitHub Actions により自動作成されました。_
           add-paths: |
             repos.yaml
-            CATEGORY.md
 
       - name: Merge sync PR when 未分類 is empty
-        if: steps.generate.outputs.uncategorized_empty == 'true'
+        if: steps.sync.outputs.uncategorized_empty == 'true'
         env:
           GH_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
         run: |
