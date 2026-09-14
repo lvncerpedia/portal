@@ -23,13 +23,17 @@ jobs:
         with:
           token: ${{ secrets.REPO_WRITE_TOKEN }}
 
+      - name: Checkout wiki
+        uses: actions/checkout@v4
+        with:
+          repository: lvncerpedia/wiki
+          path: ../wiki
+
       - uses: astral-sh/setup-uv@v5
 
       - name: Generate CATEGORY.md
         id: generate
         working-directory: .scripts
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_WRITE_TOKEN }}
         run: |
           uv sync
           uv run generate_profile_readme.py

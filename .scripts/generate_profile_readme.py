@@ -2,12 +2,8 @@ import os
 import sys
 from pathlib import Path
 
-import requests
-from dotenv import load_dotenv
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap
-
-load_dotenv()
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 REPOS_YAML = ROOT_DIR / "repos.yaml"
@@ -53,25 +49,27 @@ def listed_names(config):
     return names
 
 
-def auth_headers(token):
-    headers = {"Accept": "application/vnd.github+json"}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    return headers
+def wiki_dir(config):
+    return ROOT_DIR.parent / content_repo(config)
 
 
-def fetch_wiki_topics(org, repo, token):
-    url = f"https://api.github.com/repos/{org}/{repo}/contents/"
-    response = requests.get(url, headers=auth_headers(token), timeout=60)
-    response.raise_for_status()
-    data = response.json()
-    if not isinstance(data, list):
-        return []
-    return sorted(
-        item["name"]
-        for item in data
-        if item.get("type") == "dir" and not item["name"].startswith(".")
-    )
+def discover_wiki_topics(root):
+    topics = []
+    for child in sorted(root.iterdir(), key=lambda p: p.name):
+        if child.is_dir() and not child.name.startswith("."):
+            _collect_topics(child, topics)
+    return sorted(set(topics))
+
+
+def _collect_topics(path, topics):
+    entries = list(path.iterdir())
+    dirs = [e for e in entries if e.is_dir() and not e.name.startswith(".")]
+    has_file = any(e.is_file() and not e.name.startswith(".") for e in entries)
+    if has_file:
+        topics.append(path.name)
+        return
+    for d in sorted(dirs, key=lambda p: p.name):
+        _collect_topics(d, topics)
 
 
 def ensure_repos_list(category):
@@ -269,16 +267,15 @@ def main():
 
     config = load_config()
     org = config.get("org", "lvncerpedia")
-    wiki = content_repo(config)
     new_topics = []
 
-    token = os.getenv("GITHUB_TOKEN")
-    if token:
-        wiki_topics = fetch_wiki_topics(org, wiki, token)
-        print(f"Fetched {len(wiki_topics)} topics from '{org}/{wiki}'")
+    wiki_root = wiki_dir(config)
+    if wiki_root.is_dir():
+        wiki_topics = discover_wiki_topics(wiki_root)
+        print(f"Found {len(wiki_topics)} topics in '{wiki_root}'")
         new_topics = sync_with_wiki(config, wiki_topics)
     else:
-        print(f"No GITHUB_TOKEN: skipping wiki sync, rendering from repos.yaml only")
+        print(f"No local wiki checkout at '{wiki_root}': skipping wiki sync, rendering from repos.yaml only")
 
     new_topics_added = bool(new_topics)
     uncategorized_empty = not uncategorized_topic_names(config)
