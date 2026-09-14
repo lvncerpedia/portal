@@ -19,7 +19,7 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `math` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/math) | 数学 |
+| `math` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/science/math) | 数学 |
 | `algorithm-and-data-structure` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/algorithm-and-data-structure) | アルゴリズム・データ構造 |
 
 <a id="コンピュータ科学"></a>
@@ -28,8 +28,8 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `computer-science` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/computer-science) | コンピュータサイエンス |
-| `os` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/os) | オペレーティングシステム |
+| `computer-science` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/computer-science/computer-science) | コンピュータサイエンス |
+| `os` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/computer-science/os) | オペレーティングシステム |
 
 <a id="ソフトウェア工学"></a>
 
@@ -39,53 +39,53 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `architecture` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/architecture) | ソフトウェアアーキテクチャ |
-| `api` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/api) | API |
-| `development-principles` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/development-principles) | 開発原則 |
-| `uml` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/uml) | UML |
-| `mermaid` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/mermaid) | Mermaid図 |
+| `architecture` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/design/architecture) | ソフトウェアアーキテクチャ |
+| `api` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/design/api) | API |
+| `development-principles` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/design/development-principles) | 開発原則 |
+| `uml` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/design/uml) | UML |
+| `mermaid` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/design/mermaid) | Mermaid図 |
 
 ### 実装
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `programming` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/programming) | プログラミング全般 |
-| `programming-lang` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/programming-lang) | プログラミング言語全般 |
-| `javascript` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/javascript) | JavaScript |
+| `programming` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/programming) | プログラミング全般 |
+| `programming-lang` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/programming-lang) | プログラミング言語全般 |
+| `javascript` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/javascript) | JavaScript |
 | `python` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/python) | Python |
-| `go` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/go) | Go |
-| `rust` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/rust) | Rust |
-| `java` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/java) | Java |
-| `react` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/react) | React |
-| `react-native` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/react-native) | React Native |
-| `nextjs` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/nextjs) | Next.js |
-| `rails` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/rails) | Rails |
-| `web-saas` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/web-saas) | Web/SaaS関連 |
-| `js-libraries` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/js-libraries) | JavaScriptライブラリ |
-| `tailwindcss` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tailwindcss) | Tailwind CSS |
+| `go` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/go) | Go |
+| `rust` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/rust) | Rust |
+| `java` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/java) | Java |
+| `react` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/react) | React |
+| `react-native` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/react-native) | React Native |
+| `nextjs` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/nextjs) | Next.js |
+| `rails` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/rails) | Rails |
+| `web-saas` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/web-saas) | Web/SaaS関連 |
+| `js-libraries` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/js-libraries) | JavaScriptライブラリ |
+| `tailwindcss` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/implementation/tailwindcss) | Tailwind CSS |
 
 ### 品質
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `usertest` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/usertest) | ユーザーテスト |
-| `software-test` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-test) | ソフトウェアテスト |
-| `debug` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/debug) | デバッグ |
+| `usertest` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/quality/usertest) | ユーザーテスト |
+| `software-test` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/quality/software-test) | ソフトウェアテスト |
+| `debug` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/quality/debug) | デバッグ |
 
 ### 運用
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `aws` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/aws) | AWS |
-| `docker` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/docker) | Docker |
-| `kubernetes` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/kubernetes) | Kubernetes関連 |
-| `iac` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/iac) | Infrastructure as Code |
-| `network` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/network) | ネットワーク |
-| `monitoring` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/monitoring) | 監視 |
-| `version-control` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/version-control) | バージョン管理 |
-| `git` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/git) | Git |
-| `deploy` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/deploy) | デプロイ |
-| `workflows` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/workflows) | ワークフロー自動化 |
+| `aws` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/aws) | AWS |
+| `docker` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/docker) | Docker |
+| `kubernetes` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/kubernetes) | Kubernetes関連 |
+| `iac` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/iac) | Infrastructure as Code |
+| `network` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/network) | ネットワーク |
+| `monitoring` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/monitoring) | 監視 |
+| `version-control` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/version-control) | バージョン管理 |
+| `git` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/git) | Git |
+| `deploy` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/deploy) | デプロイ |
+| `workflows` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/software-engineering/operation/workflows) | ワークフロー自動化 |
 
 <a id="情報・知能"></a>
 
@@ -95,22 +95,22 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `llm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/llm) | LLMの基礎・仕組み |
-| `ml` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/ml) | 機械学習 |
-| `ai-agents` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/ai-agents) | AIエージェント関連 |
-| `local-llm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/local-llm) | ローカルLLM |
-| `mcp` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/mcp) | MCP・AIツール連携 |
-| `claude-code` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/claude-code) | Claude Code |
-| `humanoid-robots` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/humanoid-robots) | ヒューマノイドロボット |
-| `ai-positions` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/ai-positions) | AI領域の人物・ポジション |
+| `llm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/llm) | LLMの基礎・仕組み |
+| `ml` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/ml) | 機械学習 |
+| `ai-agents` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/ai-agents) | AIエージェント関連 |
+| `local-llm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/local-llm) | ローカルLLM |
+| `mcp` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/mcp) | MCP・AIツール連携 |
+| `claude-code` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/claude-code) | Claude Code |
+| `humanoid-robots` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/humanoid-robots) | ヒューマノイドロボット |
+| `ai-positions` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/ai-and-llm/ai-positions) | AI領域の人物・ポジション |
 
 ### データ
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `database` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/database) | データベース |
-| `sql` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/sql) | SQL |
-| `orm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/orm) | ORM |
+| `database` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/data/database) | データベース |
+| `sql` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/data/sql) | SQL |
+| `orm` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/information/data/orm) | ORM |
 
 <a id="デザイン"></a>
 
@@ -118,13 +118,13 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `design` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design) | デザイン |
-| `figma` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/figma) | Figma |
-| `fonts` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/fonts) | フォント |
-| `sound` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/sound) | サウンド |
-| `audio` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/audio) | オーディオ機器・音響 |
-| `presentation` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/presentation) | プレゼンテーション |
-| `modeling` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/modeling) | 3D モデリング |
+| `design` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/design) | デザイン |
+| `figma` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/figma) | Figma |
+| `fonts` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/fonts) | フォント |
+| `sound` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/sound) | サウンド |
+| `audio` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/audio) | オーディオ機器・音響 |
+| `presentation` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/presentation) | プレゼンテーション |
+| `modeling` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/design/modeling) | 3D モデリング |
 
 <a id="人文・言語"></a>
 
@@ -132,7 +132,7 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `english` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/english) | 英語 |
+| `english` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/humanities/english) | 英語 |
 
 <a id="教養・文化"></a>
 
@@ -142,26 +142,26 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `game-making` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/game-making) | ゲーム制作全般（技術面） |
-| `game-knowhow` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/game-knowhow) | ゲーム制作ノウハウ |
-| `godot` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/godot) | Godot |
-| `game-list` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/game-list) | ゲーム一覧 |
+| `game-making` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/game/game-making) | ゲーム制作全般（技術面） |
+| `game-knowhow` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/game/game-knowhow) | ゲーム制作ノウハウ |
+| `godot` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/game/godot) | Godot |
+| `game-list` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/game/game-list) | ゲーム一覧 |
 
 ### 知識・探究
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `universe` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/universe) | 宇宙 |
-| `military` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/military) | 軍事・装備 |
-| `exams` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/exams) | 試験・学習メモ |
+| `universe` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/knowledges/universe) | 宇宙 |
+| `military` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/knowledges/military) | 軍事・装備 |
+| `exams` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/knowledges/exams) | 試験・学習メモ |
 
 ### 時事・記録
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `news` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/news) | ニュースメモ |
-| `news-source` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/news-source) | ニュース情報源 |
-| `events` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/events) | イベント |
+| `news` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/affairs/news) | ニュースメモ |
+| `news-source` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/affairs/news-source) | ニュース情報源 |
+| `events` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/liberal-arts/affairs/events) | イベント |
 
 <a id="経営学"></a>
 
@@ -169,10 +169,10 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `project-management` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/project-management) | プロジェクト管理 |
-| `corporate-strategy` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/corporate-strategy) | 経営戦略 |
-| `logical-thinking` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/logical-thinking) | 論理的思考 |
-| `organizational-behavior` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/organizational-behavior) | 組織行動学 |
+| `project-management` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/business-administration/project-management) | プロジェクト管理 |
+| `corporate-strategy` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/business-administration/corporate-strategy) | 経営戦略 |
+| `logical-thinking` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/business-administration/logical-thinking) | 論理的思考 |
+| `organizational-behavior` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/business-administration/organizational-behavior) | 組織行動学 |
 
 <a id="環境・ツール"></a>
 
@@ -182,25 +182,25 @@
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `nvim` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/nvim) | Neovim |
-| `obsidian` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/obsidian) | Obsidian |
-| `toolchain` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/toolchain) | 開発ツールチェーン |
+| `nvim` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/development-environment/nvim) | Neovim |
+| `obsidian` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/development-environment/obsidian) | Obsidian |
+| `toolchain` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/development-environment/toolchain) | 開発ツールチェーン |
 
 ### ハードウェア
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `gadget` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/gadget) | ガジェット |
-| `custom-built-PC` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/custom-built-PC) | 自作PC |
+| `gadget` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/hardware/gadget) | ガジェット |
+| `custom-built-PC` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/hardware/custom-built-PC) | 自作PC |
 | `custom-keyboard` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/custom-keyboard) | 自作キーボード |
 
 ### デスク・操作
 
 | Repository | Repository URL | Memo |
 | --- | --- | --- |
-| `unixporn` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/unixporn) | デスクトップカスタマイズ |
-| `setup` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/setup) | 環境構築・セットアップ |
-| `shortcut` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/shortcut) | ショートカット |
+| `unixporn` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/operation/unixporn) | デスクトップカスタマイズ |
+| `setup` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/operation/setup) | 環境構築・セットアップ |
+| `shortcut` | [GitHub](https://github.com/lvncerpedia/wiki/tree/main/tools/operation/shortcut) | ショートカット |
 
 <a id="管理"></a>
 
